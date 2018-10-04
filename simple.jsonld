@@ -1,0 +1,26 @@
+{
+  "@context": "https://code.sgo.to/datasets",
+  "@type": "Dataset",
+  "name": "Natural World",
+  "description": "A simple dataset about the natural world",
+  "release": "0.0.1",
+  "dateCreated": "2018/10/03",
+  "datePublished": "2018/10/03",
+  "dateModified": "2018/10/03",
+  "classes": [{
+    "@type": "Class",
+    "name": "Honey",
+    "images": [
+      "https://material-ui.com/static/images/grid-list/honey.jpg",
+      "https://material-ui.com/static/images/grid-list/vegetables.jpg",
+      "https://material-ui.com/static/images/grid-list/plant.jpg"
+      ]
+    }, {
+      "@type": "Class",
+      "name": "Mushrooms",
+      "images": [
+        "https://material-ui.com/static/images/grid-list/mushroom.jpg"
+      ]
+    }
+  ]
+}
