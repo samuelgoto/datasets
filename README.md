@@ -34,7 +34,7 @@ Here is a concrete example:
 | ------------- |:-----------------------:| :----------------------------------------------------------------|
 | name          | [String](#string)       | The name of the dataset                                          |
 | description   | [String](#string)       | A short description about the dataset                            |
-| url           | [String](#string)       | Where this dataset is to be found                                |
+| url           | [URL](#url)             | Where this dataset is to be found                                |
 | download      | [String](#string)       | A link to a downloadable version of this dataset                 |
 | citation      | [Bib](#bib)[]           | The citation requirements while using this dataset               |
 | release       | [String](#string)       | The release number                                               |
@@ -45,20 +45,20 @@ Here is a concrete example:
       
 # Class
 
-| Property      | Type                    | Description                                                      |
-| ------------- |:-----------------------:| :----------------------------------------------------------------|
-| name          | [String](#string)       | The name of the class                                            |
-| description   | [String](#string)       | A short description about the class                              |
-| images        | [Image](#image)[]       | An array of images in this class                                 |
+| Property      | Type                                   | Description                                                      |
+| ------------- |:--------------------------------------:| :----------------------------------------------------------------|
+| name          | [String](#string)                      | The name of the class                                            |
+| description   | [String](#string)                      | A short description about the class                              |
+| images        | [Image](#image)[], [URL](#url)[]       | An array of images in this class                                 |
 
 # Image
 
-| Property      | Type                    | Description                                                      |
-| ------------- |:-----------------------:| :----------------------------------------------------------------|
-| name          | [String](#string)       | The name of the class                                            |
-| url           | [String](#string)       | The url with the bits of the image                               |
-| size          | [Size](#size)           | The size of the image                                            |
-| boxes         | [Box](#box)[]           | An array of bounding boxes where the class appears in the image  |
+| Property      | Type                                   | Description                                                      |
+| ------------- |:--------------------------------------:| :----------------------------------------------------------------|
+| name          | [String](#string)                      | The name of the class                                            |
+| url           | [URL](#url)                            | The url with the bits of the image                               |
+| size          | [Size](#size)                          | The size of the image                                            |
+| boxes         | [Box](#box)[]                          | An array of bounding boxes where the class appears in the image  |
 
 # Size
 
@@ -91,3 +91,7 @@ A date value in ISO 8601 date format.
 # Number
 
 A numeric value.
+
+# URL
+
+A URL.
