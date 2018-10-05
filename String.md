@@ -1,3 +1,0 @@
-# String
-
-A text string.

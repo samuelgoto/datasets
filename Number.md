@@ -1,3 +1,0 @@
-# Number
-
-A numeric value.

@@ -1,3 +1,0 @@
-# Bib
-
-A bib description.
