@@ -314,7 +314,9 @@ class Gallery extends React.Component {
   // console.log(clazz.images);
   return (
             <div>
-              <Typography className={classes.heading}>{clazz.name}</Typography>
+              <Typography className={classes.heading}>{clazz.name || ""}</Typography>
+              <br />
+              <Typography className={classes.heading}>{clazz.description || ""}</Typography>
               <br />
               <br />
               <GridList cellHeight={160} className={classes.gridList} cols={5}>
