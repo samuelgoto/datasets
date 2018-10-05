@@ -30,18 +30,18 @@ Here is a concrete example:
 
 # Dataset
 
-| Property      | Type                    | Description                                                      |
-| ------------- |:-----------------------:| :----------------------------------------------------------------|
-| name          | [String](#string)       | The name of the dataset                                          |
-| description   | [String](#string)       | A short description about the dataset                            |
-| url           | [URL](#url)             | Where this dataset is to be found                                |
-| download      | [String](#string)       | A link to a downloadable version of this dataset                 |
-| citation      | [Bib](#bib)[]           | The citation requirements while using this dataset               |
-| release       | [String](#string)       | The release number                                               |
-| createdDate   | [Date](#date)           | The date the dataset was created                                 |
-| publishedDate | [Date](#date)           | The date the dataset was published                               |
-| modifiedDate  | [Date](#date)           | The date the dataset was last modified                           |
-| classes       | [Class](#class)[]       | An array of classes in this dataset                              |
+| Property      | Type                                  | Description                                                      |
+| ------------- |:-------------------------------------:| :----------------------------------------------------------------|
+| name          | [String](#string)                     | The name of the dataset                                          |
+| description   | [String](#string)                     | A short description about the dataset                            |
+| url           | [URL](#url)                           | Where this dataset is to be found                                |
+| download      | [String](#string)                     | A link to a downloadable version of this dataset                 |
+| citation      | [Bib](#bib)[]                         | The citation requirements while using this dataset               |
+| release       | [String](#string)                     | The release number                                               |
+| createdDate   | [Date](#date)                         | The date the dataset was created                                 |
+| publishedDate | [Date](#date)                         | The date the dataset was published                               |
+| modifiedDate  | [Date](#date)                         | The date the dataset was last modified                           |
+| classes       | [Class](#class)[] or [URL](#url)[]    | An array of classes in this dataset                              |
       
 # Class
 
@@ -49,7 +49,7 @@ Here is a concrete example:
 | ------------- |:--------------------------------------:| :----------------------------------------------------------------|
 | name          | [String](#string)                      | The name of the class                                            |
 | description   | [String](#string)                      | A short description about the class                              |
-| images        | [Image](#image)[], [URL](#url)[]       | An array of images in this class                                 |
+| images        | [Image](#image)[] or [URL](#url)[]     | An array of images in this class                                 |
 
 # Image
 
@@ -62,19 +62,19 @@ Here is a concrete example:
 
 # Size
 
-| Property      | Type                    | Description                                                      |
-| ------------- |:-----------------------:| :----------------------------------------------------------------|
-| width         | [Number](#number)       | The width (in pixels) of the image                               |
-| height        | [Number](#number)       | The height (in pixels) of the image                              |
+| Property      | Type                                   | Description                                                      |
+| ------------- |:--------------------------------------:| :----------------------------------------------------------------|
+| width         | [Number](#number)                      | The width (in pixels) of the image                               |
+| height        | [Number](#number)                      | The height (in pixels) of the image                              |
 
 # Box
 
-| Property      | Type                    | Description                                                      |
-| ------------- |:-----------------------:| :----------------------------------------------------------------|
-| left          | [Number](#number)       | The leftmost limit of the bounding box (in pixels)               |
-| right         | [Number](#number)       | The rightmost limit of the bounding box (in pixels)              |
-| top           | [Number](#number)       | The top limit of the bounding box (in pixels)                    |
-| bottom        | [Number](#number)       | The bottom limit of the bounding box (in pixels)                 |
+| Property      | Type                                   | Description                                                      |
+| ------------- |:--------------------------------------:| :----------------------------------------------------------------|
+| left          | [Number](#number)                      | The leftmost limit of the bounding box (in pixels)               |
+| right         | [Number](#number)                      | The rightmost limit of the bounding box (in pixels)              |
+| top           | [Number](#number)                      | The top limit of the bounding box (in pixels)                    |
+| bottom        | [Number](#number)                      | The bottom limit of the bounding box (in pixels)                 |
 
 # Bib
 
