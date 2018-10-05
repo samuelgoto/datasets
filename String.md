@@ -1,0 +1,3 @@
+# String
+
+A text string.
