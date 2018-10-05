@@ -339,7 +339,7 @@ class Gallery extends React.Component {
                     }
                     let image = clazz.images[this.state.selected];
                     let url = typeof image == "string" ? image : image.url;
-                    return (<img src={url} />);
+                    return (<img src={url} style={{width: "100%"}} />);
                  }).bind(this)()}
                 </div>
               </Dialog>
