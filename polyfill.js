@@ -255,13 +255,15 @@ class Browser extends React.Component {
                     <TableBody>
                       {
                       page.map((clazz, id) => {
+                        let key = clazz.status == "loaded" ? clazz.value.name : clazz.status;
+                        let value = clazz.status == "loaded" ? (clazz.value.images || []).length : clazz.status;
                         return (
                           <TableRow 
                              className={classes.row}
                              onClick={event => this.handleClick(event, offset * PAGE_SIZE + id)}
                              selected={(offset * PAGE_SIZE + id) == selected}>
-                            <TableCell>{clazz.status == "loaded" ? clazz.value.name : "loading"}</TableCell>
-                            <TableCell>{clazz.status == "loaded" ? (clazz.value.images || []).length : "loading"}</TableCell>
+                            <TableCell>{key}</TableCell>
+                            <TableCell>{value}</TableCell>
                           </TableRow>
                         )
                       })
@@ -309,17 +311,19 @@ class Gallery extends React.Component {
    return (<div />);
   }
   let clazz = value;
+  // console.log(clazz.images);
   return (
             <div>
               <Typography className={classes.heading}>{clazz.name}</Typography>
-                <br />
-                <br />
-              <GridList cellHeight={160} className={classes.gridList} cols={3}>
+              <br />
+              <br />
+              <GridList cellHeight={160} className={classes.gridList} cols={5}>
               {
                 (clazz.images || []).map((image, index) => {
+                  let url = typeof image == "string" ? image : image.url;
                   return (
-                    <GridListTile key={image.url}>
-                      <img style={{cursor: "pointer"}} src={image.url} onClick={() => this.setState({selected: index})}/>
+                    <GridListTile key={url}>
+                      <img style={{cursor: "pointer"}} src={url} onClick={() => this.setState({selected: index})}/>
                     </GridListTile>
                   )
                 })
@@ -329,7 +333,14 @@ class Gallery extends React.Component {
               <Dialog open={this.state.selected != undefined} onClose={this.handleToggle.bind(this)}>
                 <DialogTitle>Image</DialogTitle>
                 <div onClick={this.handleToggle.bind(this)}>
-                  <img src={this.state.selected != undefined && clazz.images[this.state.selected].url} />
+                 {(function() {
+                    if (this.state.selected == undefined) {
+                     return;
+                    }
+                    let image = clazz.images[this.state.selected];
+                    let url = typeof image == "string" ? image : image.url;
+                    return (<img src={url} />);
+                 }).bind(this)()}
                 </div>
               </Dialog>
             </div>
