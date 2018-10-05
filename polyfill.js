@@ -107,7 +107,9 @@ class Dataset extends React.Component {
    const {classes} = this.props;
    const dataset = this.props.dataset;
    dataset.classes = dataset.classes || [];
-   
+
+   let download = dataset.download;
+   // console.log(dataset);
    return (
             <div className={classes.root}>
               <main className={classes.content}>
@@ -121,8 +123,8 @@ class Dataset extends React.Component {
                     onClick={this.toggleDrawer.bind(this, "code", true)}>
                     Code
                   </Button>
-                  <Button variant="outlined" className={classes.button} disabled>
-                    Download
+                  <Button variant="outlined" className={classes.button} disabled={download == undefined}>
+                    <a href={download}>Download</a>
                   </Button>
                 </center>
 
@@ -133,6 +135,7 @@ class Dataset extends React.Component {
                   onOpen={this.toggleDrawer.bind(this, "summary", true)}
                   >
                   <Row name="release number" value={dataset.release} description="hello world" />
+                  <Row name="download" value={dataset.download} description="hello world" />
                   <Row name="release date" value={dataset.dateReleased} description="hello world" />
                   <Row name="creation date" value={dataset.dateCreated} description="hello world" />
                   <Row name="published date" value={dataset.datePublished} description="hello world" />

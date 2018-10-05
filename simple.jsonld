@@ -3,6 +3,7 @@
   "@type": "Dataset",
   "name": "Natural World",
   "description": "A simple dataset about the natural world",
+  "download": "https://code.sgo.to",
   "release": "0.0.1",
   "dateCreated": "2018/10/03",
   "datePublished": "2018/10/03",
