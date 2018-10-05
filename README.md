@@ -35,7 +35,7 @@ Here is a concrete example:
 | name          | [String](#string)                     | The name of the dataset                                          |
 | description   | [String](#string)                     | A short description about the dataset                            |
 | url           | [URL](#url)                           | Where this dataset is to be found                                |
-| download      | [String](#string)                     | A link to a downloadable version of this dataset                 |
+| download      | [URL](#url)                           | A link to an [archive](#archive) version of this dataset.        |
 | citation      | [Bib](#bib)[]                         | The citation requirements while using this dataset               |
 | release       | [String](#string)                     | The release number                                               |
 | createdDate   | [Date](#date)                         | The date the dataset was created                                 |
@@ -95,3 +95,9 @@ A numeric value.
 # URL
 
 A URL.
+
+# Archive
+
+To ease the distribuition of image binaries (which tend to be large, say (1GB)), [Datasets](#dataset) can be published inside archiveable formats (```.tar.gz```, ```.zip```, etc). [Datasets](#dataset) have a [download](#download) property which points to a [URL](#url) that you can programatically use to download everything.
+
+By convention, an archiveable [Dataset](#dataset) contains an ```index.jsonld``` file inside the root directory of the archive, which serves as an entrypoint to any other linked data inside the archive (which can be referenced through relative links).
