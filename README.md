@@ -1,6 +1,6 @@
 # datasets
 
-[Datasets](Dataset.md) is a JSON-LD ```@context``` that describes a visual dataset of images to be used as input to computer vision classification and localization training pipelines.
+[Datasets](#dataset) is a JSON-LD ```@context``` that you can use to publish a visual dataset of images to be used as input to computer vision classification and localization training pipelines.
 
 Here is a concrete example:
 
