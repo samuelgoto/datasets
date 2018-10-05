@@ -109,7 +109,7 @@ class Dataset extends React.Component {
    dataset.classes = dataset.classes || [];
 
    let download = dataset.download;
-   // console.log(dataset);
+   // console.log(dataset.classes);
    return (
             <div className={classes.root}>
               <main className={classes.content}>
@@ -235,11 +235,12 @@ class Browser extends React.Component {
   let offset = this.state.page;
   const PAGE_SIZE = 5;
   let page = list.slice(offset * PAGE_SIZE, (offset + 1) * PAGE_SIZE);
-  let total = list.length / PAGE_SIZE;
+  // let total = list.length / PAGE_SIZE;
+  let total = list.length;
   let selected = this.state.selected;
 
   // console.log(offset);
-  // console.log(selected);
+  // console.log(list.length);
 
   return (
             <div>
