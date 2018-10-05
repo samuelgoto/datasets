@@ -1,6 +1,6 @@
 # datasets
 
-Datasets is a JSON-LD ```@context``` that describes a visual dataset of images to be used as input to computer vision classification and localization training pipelines.
+[Datasets](Dataset.md) is a JSON-LD ```@context``` that describes a visual dataset of images to be used as input to computer vision classification and localization training pipelines.
 
 Here is a concrete example:
 
@@ -28,16 +28,7 @@ Here is a concrete example:
 }
 ```
 
-The basic skeleton of a dataset follows this structure:
+You can learn more about the schema [here](Dataset.md).
 
-- dataset ([Dataset](Dataset.md))
-  - name ([String](String.md))
-  - description ([String](String.md))
-  - download ([String](String.md))
-  - classes ([Class](Class.md)[])
-    - name ([String](String.md))
-    - images ([Image](Image.md))
-      - size ([Size](Size.md))
-      - box ([Box](Box.md))
       
 
