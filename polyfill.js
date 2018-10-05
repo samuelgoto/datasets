@@ -323,8 +323,9 @@ class Gallery extends React.Component {
               {
                 (clazz.images || []).map((image, index) => {
                   let url = typeof image == "string" ? image : image.url;
+                  let key = `${image.name}-${index}-${url}`;
                   return (
-                    <GridListTile>
+                    <GridListTile key={key}>
                       <img style={{cursor: "pointer"}} src={url} onClick={() => this.setState({selected: index})}/>
                     </GridListTile>
                   )
