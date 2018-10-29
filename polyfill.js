@@ -325,8 +325,9 @@ class Gallery extends React.Component {
               <GridList cellHeight={160} className={classes.gridList} cols={5}>
               {
                 (clazz.images || []).map((image, index) => {
-                  console.log(clazz);
-                  let url = typeof image == "string" ? image : new URL(image.url, clazz.url);
+                  // console.log(clazz.url);
+                  let url = typeof image == "string" ? new URL(image, clazz.url) : new URL(image.url, clazz.url);
+                  
                   let key = `${image.name}-${index}-${url}`;
                   return (
                     <GridListTile key={key}>
