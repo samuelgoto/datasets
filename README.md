@@ -28,6 +28,8 @@ Here is a concrete example:
 }
 ```
 
+Here is the schema:
+
 # Dataset
 
 | Property      | Type                                  | Description                                                      |
