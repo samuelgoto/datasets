@@ -179,7 +179,8 @@ class Browser extends React.Component {
    super();
    this.state = {
     selected: 0,
-    page: 0
+    page: 0,
+    url: props.dataset.url
    };
 
    // alert(props.dataset.classes);
@@ -205,7 +206,8 @@ class Browser extends React.Component {
     continue;
    }
    // console.log(clazz);
-   let result = await fetch(clazz.value);
+   let url = clazz.value;
+   let result = await fetch(url);
    // console.log(result);
    if (!result.ok) {
     classes[i].status = "failed";
@@ -213,6 +215,7 @@ class Browser extends React.Component {
    } else {
     classes[i].status = "loaded";
     classes[i].value = await result.json();
+    classes[i].value.url = new URL(url, this.state.url);
     this.setState({classes: classes});
    }
   }
@@ -322,7 +325,8 @@ class Gallery extends React.Component {
               <GridList cellHeight={160} className={classes.gridList} cols={5}>
               {
                 (clazz.images || []).map((image, index) => {
-                  let url = typeof image == "string" ? image : image.url;
+                  console.log(clazz);
+                  let url = typeof image == "string" ? image : new URL(image.url, clazz.url);
                   let key = `${image.name}-${index}-${url}`;
                   return (
                     <GridListTile key={key}>
@@ -401,6 +405,7 @@ async function main() {
  let el = selector;
 
  let {dataset, error} = await load(file);
+ dataset.url = dataset.url || new URL(file, window.location.href);
  render(dataset, error, el);
 }
 
