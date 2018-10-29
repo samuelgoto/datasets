@@ -51,7 +51,7 @@ Here is the schema:
 | ------------- |:--------------------------------------:| :----------------------------------------------------------------|
 | name          | [String](#string)                      | The name of the class                                            |
 | description   | [String](#string)                      | A short description about the class                              |
-| images        | [Image](#image)[] or [URL](#url)[]     | An array of images in this class                                 |
+| images        | [Image](#image)[]                      | An array of images in this class                                 |
 
 # Image
 
