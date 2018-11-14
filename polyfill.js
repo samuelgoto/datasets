@@ -325,7 +325,7 @@ class Gallery extends React.Component {
               <GridList cellHeight={160} className={classes.gridList} cols={5}>
               {
                 (clazz.images || []).map((image, index) => {
-                  console.log(clazz.url);
+                  // console.log(clazz.url);
                   let url = typeof image == "string" ? new URL(image, clazz.url) : new URL(image.url, clazz.url);
                   
                   let key = `${image.name}-${index}-${url}`;
@@ -397,7 +397,7 @@ async function load(file) {
 }
 
 async function main() {
- let selector = document.querySelector("script[type='application/ld+json']");
+ let selector = document.querySelector("script[type='application/vnd.datasets']");
  if (!selector) {
   console.log("no JSON-LD file found in this page");
   return;
